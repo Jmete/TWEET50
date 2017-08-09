@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
+@import url(http://fonts.googleapis.com/css?family=Cutive+Mono);
+@import url(http://fonts.googleapis.com/css?family=PT+Mono);
+
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+#cs50head{
+width:100%;
+height:100px;
+background:white;
+color:black;
+line-height:100px;
+text-align:center;
+font-family: 'Cutive Mono';
+font-size:50px;
+}
+
+#cs50head:hover{
+    cursor: hand; cursor: pointer;
+    
+}
+
+#tweetinputban{
+width:100%;
+margin:0 auto;
+height:50px;
+background:white;
+color:black;
+line-height:50px;
+text-align:center;
+font-family: 'Cutive Mono';
+font-size:10px;
+}
+    
+#tweetinput{
+    background:white;
+    text-align:center;
+}
+
+
+
+#cs50foot{
+height:100px;
+background:white;
+color:black;
+line-height:100px;
+text-align:center;
+font-family: 'Cutive Mono';
+font-size:50px;
+}
+
+#tweets .ui-listview li {
+	background: #FCFCFC;
+	color: #666;
+	font-weight: normal;
+	border-top: 1px solid #888;
+}
+
+#tweets .ui-listview a{
+	color: #555;
+    font-weight:bold;
+}
+
+
+
+#tweets .ui-listview li:hover{
+    background-color:#55ACEE;
+    color:white;
+}
+
+#tweets .ui-listview li:hover a{
+    
+    color:#f5fafe;
+    font-weight:bold;
+}
+
+
+
+#tweets img {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 12px;
+	margin: 14px 0 0 25px;
+}
+

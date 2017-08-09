@@ -2,57 +2,73 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>View Source</title>
 
+
+
+    <!-- Done by James Mete for CS50
+    May 16, 2014
+
+    Hello, World!
+    This is TWEET50. -->
+
+
+	<title>TWEET50</title>
+
+    <!-- for better design especially on smaller devices and layout of the list data  -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	
-	<link rel="apple-touch-icon" href="images/appicon.png" type="" />
-	
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	
-	<link rel="apple-touch-startup-image" href="images/splash.png" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-  <link rel="stylesheet" href="_/css/solarized.css" />
-  <link rel="stylesheet" href="_/css/cs50.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" /> 
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
-  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <link rel="stylesheet" href="resources/css/cs50.css" />
 
-	<script src="_/js/myscript.js"></script>
-	<link rel="stylesheet" href="_/css/mystyles.css" />
+    <!-- js and jquery code including the main function for sending requests and receiving data from twitter api -->
+	<script src="resources/js/cs50.js"></script>
+
+
+
 </head>
 <body>
 
-	
-	
-	
-	
-	<!-- ========================== Page: tweets ========================== -->
 	<div id="tweets">
-		<div id="cs50head">TWEET50
-		</div><!-- header -->
+
+        <!-- Header. User can click header to reload page -->
+    	<div id="cs50head" onclick="redirect50()">TWEET50</div>
+        <!-- Text input to check username -->
+        <input type="text" placeholder="Enter twitter username" id="tweetinput">
+
+<script>
+    // Inline scripts make it easier to separate the backend js with more design-focused script
+    // Calls function to get tweets when the text input changes. Activates by 'enter' key or by clicking outside.
+    // Design note: I could also call the function on an interval to constantly update but since the twitter api imposes a strict rate limit, it might break the webapp.
+    $(document).ready(function(){
+    $("input").change(function(){
+        reloadtwit();
+    });
+    });
+
+
+    // Calls function on textinput. Sometimes buggy when deleting characters but overall adds to a fluid experience. User types and automatically checks the text input for username.
+    $("#tweetinput").keyup( function() {
+        reloadtwit();
+    });
+</script>
+        <!-- Where the actual tweets will be displayed as li elements
 		<div data-role="content"
 			id="tweetlist">Attempting to load twitter feed, please wait...
 		</div><!-- content -->
-		<div "cs50foot">JMete
-		</div><!-- footer -->
-	</div><!-- page -->
-	
-	
 
-<script src="tweets_json.php?count=50&callback=listTweets" type="text/javascript"></script>
+	</div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-	var refreshID = setInterval(function() {
-		$.getJSON('tweets_json.php?count=50',function(data) {
-				listTweets(data);
-				$('#tweetlist').trigger('create');
-		});
-	}, 50000);
-});
-</script>
+
+
+<!-- Sets a default call to api to get cs50 tweets to display as default tweets when page loads -->
+
+<script src="tweets_json.php?screen_name=cs50&callback=listTweets" type="text/javascript"></script>
+
+
+
+
 
 </body>
 </html>
