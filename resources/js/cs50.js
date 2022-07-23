@@ -58,7 +58,7 @@ function reloadtwit(){
 
 
 function redirect50(){
-    window.location.href = "https://tweet50.jamesmete.com";
+    window.location.href = "https://tweet50.herokuapp.com/";
 }
 
 
