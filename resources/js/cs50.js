@@ -16,13 +16,13 @@ function listTweets(data) {
 		
 		text=text.replace(/[@]+[A-Za-z0-9-_]+/g, function(i) {
 			var item = i.replace("@",'');
-			var	url = i.link("http://twitter.com/"+ item);
+			var	url = i.link("https://twitter.com/"+ item);
 			return url;
 		});
 		
 		text=text.replace(/[#]+[A-Za-z0-9-_]+/g, function(i) {
 			var item = i.replace("#", '%23');
-			var url = i.link("http://search.twitter.com/search?q="+item);
+			var url = i.link("https://search.twitter.com/search?q="+item);
 			return url;
 		});
 		
@@ -58,7 +58,7 @@ function reloadtwit(){
 
 
 function redirect50(){
-    window.location.href = "http://jamesmete.com/TWEET50/";
+    window.location.href = "https://tweet50.jamesmete.com";
 }
 
 
