@@ -8,11 +8,11 @@ require 'tmhOAuth.php'; // Get it from: https://github.com/themattharris/tmhOAut
 // This information should be kept secret and security can be an issue.
 
 $connection = new tmhOAuth(array(
-  'consumer_key' => '',
-	'consumer_secret' => '',
-	'user_token' => '', //access token
-	'user_secret' => '' //access token secret
-));
+	'consumer_key' => getenv('CONSUMER_KEY'),
+	  'consumer_secret' => getenv('CONSUMER_SECRET'),
+	  'user_token' => getenv('USER_TOKEN'), //access token
+	  'user_secret' => getenv('USER_SECRET') //access token secret
+  ));
 
 // Sets up parameters to pass. These can be found in the twitter api documentation.
 $parameters = array();
