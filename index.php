@@ -69,6 +69,8 @@
 
 
 
-<a href="https://jamesmete.com" >© James Mete</a>
+<a href="https://jamesmete.com" >
+<div style="text-align:center;padding-top:4px;padding-bottom:4px;">© James Mete</div>
+</a>
 </body>
 </html>
